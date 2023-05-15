@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="add-to__list">
-                    <p>+ Create New Board</p>
+                    <button>+ Create New Board</button>
                 </div>
             </div>
         </div>
@@ -104,7 +104,11 @@ function toggleTheme() {
     justify-content: space-between;
     max-width: 300px;
     height: 100vh;
-    transition: all 0.5s ease;
+    background: $color_white;
+    border-right: 1px solid #e4ebfa;
+    padding-right: $universal_backdown;
+
+    @include base-transition;
 }
 
 .sidebar__opener {
@@ -112,7 +116,7 @@ function toggleTheme() {
     border-radius: 0px 100px 100px 0px;
     position: fixed;
     left: 0;
-    bottom: 200px;
+    bottom: 32px;
     cursor: pointer;
 
     img {
@@ -122,12 +126,11 @@ function toggleTheme() {
 
 .sidebar--hidden {
     left: -300px;
-    transition: all 0.5s ease;
+    @include base-transition;
 }
 
 .logo {
-    margin: $medium_padding 0px $medium_margin 0px;
-    margin-left: $medium_margin;
+    @include logo-backdown;
 }
 
 .boards {
@@ -177,11 +180,12 @@ function toggleTheme() {
         }
     }
     .add-to__list {
+        display: inherit;
         cursor: pointer;
         margin-left: $medium_margin;
         margin-top: $small_margin;
 
-        p {
+        button {
             font-style: normal;
             font-weight: $bold_text;
             color: $common_background;
@@ -203,8 +207,7 @@ function toggleTheme() {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 100%;
-        margin: 0px 24px;
+        margin-left: $universal_backdown;
         padding: $small_padding 64px;
         background: $minor_background;
 

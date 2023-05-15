@@ -1,11 +1,13 @@
 <template>
     <div>
+        <HeaderMenu />
         <Sidebar />
     </div>
 </template>
 
 <script setup>
 import Sidebar from '@/components/Sidebar.vue';
+import HeaderMenu from './components/HeaderMenu.vue';
 </script>
 
 <style>
@@ -16,6 +18,10 @@ import Sidebar from '@/components/Sidebar.vue';
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
+}
+
+body {
+    overflow: hidden;
 }
 
 nav {

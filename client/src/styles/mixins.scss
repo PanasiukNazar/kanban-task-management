@@ -1,0 +1,10 @@
+@import './variables.scss';
+
+@mixin base-transition {
+    transition: all 0.5s ease;
+}
+
+@mixin logo-backdown {
+    margin: $medium_margin;
+    margin-left: $medium_margin;
+}
