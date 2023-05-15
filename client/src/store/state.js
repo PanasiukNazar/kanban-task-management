@@ -1,10 +1,10 @@
 export default {
-    theme: 'dark',
+    isDarkTheme: true,
     boardItems: [
         {
             title: 'Platform launch',
-            isSelected: true,
             id: 1,
+            isSelected: true,
         },
         {
             title: 'Marketing plan',

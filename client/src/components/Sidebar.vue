@@ -8,7 +8,7 @@
             <div class="boards">
                 <div class="boards__counter">
                     <p class="boards__title">
-                        All boards ({{ boardItemsLength }})
+                        All boards ({{ boardsItems.length }})
                     </p>
                 </div>
 
@@ -17,6 +17,7 @@
                     v-for="item in boardsItems"
                     :key="item.id"
                     :class="item.isSelected ? 'item--selected' : ''"
+                    @click="selectBoard(item.id)"
                 >
                     <div class="icon">
                         <img src="@/assets/icon-board.svg" />
@@ -36,7 +37,11 @@
                     <img src="@/assets/icon-light-theme.svg" />
                 </div>
 
-                <div class="theme__switcher">
+                <div
+                    class="theme__switcher"
+                    @click="toggleTheme"
+                    :class="currentTheme ? 'dark' : ''"
+                >
                     <p></p>
                 </div>
 
@@ -45,19 +50,21 @@
                 </div>
             </div>
 
-            <div class="sidebar__concealer">
+            <div @click="toggleSidebar" class="sidebar__concealer">
                 <div class="concealer__icon">
                     <img src="@/assets/icon-hide-sidebar.svg" />
                 </div>
-                <span @click="toggleSidebar">Hide Sidebar</span>
+                <span>Hide Sidebar</span>
             </div>
         </div>
 
         <div
-            v-if="isSidebarHidden"
+            v-show="isSidebarHidden"
             @click="toggleSidebar"
             class="sidebar__opener"
-        ></div>
+        >
+            <img src="@/assets/icon-show-sidebar.svg" />
+        </div>
     </div>
 </template>
 
@@ -66,15 +73,23 @@ import { useStore } from 'vuex';
 import { computed } from 'vue';
 import { ref } from 'vue';
 
-let isSidebarHidden = ref(false);
-
 const store = useStore();
 
+let isSidebarHidden = ref(false);
+
 const boardsItems = computed(() => store.state.boardItems);
-const boardItemsLength = computed(() => store.getters.boardItemsList);
+const currentTheme = computed(() => store.state.isDarkTheme);
 
 function toggleSidebar() {
     isSidebarHidden.value = !isSidebarHidden.value;
+}
+
+function selectBoard(id) {
+    store.commit('selectBoard', id);
+}
+
+function toggleTheme() {
+    store.commit('toggleTheme');
 }
 </script>
 
@@ -93,12 +108,16 @@ function toggleSidebar() {
 }
 
 .sidebar__opener {
-    width: 20px;
-    height: 20px;
     background-color: #635fc7;
+    border-radius: 0px 100px 100px 0px;
     position: fixed;
     left: 0;
     bottom: 200px;
+    cursor: pointer;
+
+    img {
+        padding: $regular_padding;
+    }
 }
 
 .sidebar--hidden {
@@ -207,7 +226,7 @@ function toggleSidebar() {
                 border-radius: 50%;
             }
         }
-        .darkTheme {
+        .dark {
             justify-content: end;
         }
     }
