@@ -1,6 +1,9 @@
 <template>
     <div class="header__menu">
-        <div class="logo__section">
+        <div
+            class="logo__section"
+            :class="!isSidebarHidden ? 'logo__section--enlarged' : ''"
+        >
             <div>
                 <img src="@/assets/logo-dark.svg" alt="" />
             </div>
@@ -21,7 +24,14 @@
     </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { useStore } from 'vuex';
+import { computed } from 'vue';
+
+const store = useStore();
+
+const isSidebarHidden = computed(() => store.state.isSidebarHidden);
+</script>
 
 <style lang="scss">
 @import '../styles/main.scss';
@@ -36,10 +46,16 @@
 
     .logo__section {
         border-right: 1px solid #e4ebfa;
+        @include base-transition;
 
         div {
             @include logo-backdown;
         }
+    }
+
+    .logo__section--enlarged {
+        margin-right: 58px;
+        @include base-transition;
     }
 
     .board__description {

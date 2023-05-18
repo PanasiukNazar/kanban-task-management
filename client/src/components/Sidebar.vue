@@ -71,17 +71,15 @@
 <script setup>
 import { useStore } from 'vuex';
 import { computed } from 'vue';
-import { ref } from 'vue';
 
 const store = useStore();
 
-let isSidebarHidden = ref(false);
-
+const isSidebarHidden = computed(() => store.state.isSidebarHidden);
 const boardsItems = computed(() => store.state.boardItems);
 const currentTheme = computed(() => store.state.isDarkTheme);
 
 function toggleSidebar() {
-    isSidebarHidden.value = !isSidebarHidden.value;
+    store.commit('toggleSidebar');
 }
 
 function selectBoard(id) {
