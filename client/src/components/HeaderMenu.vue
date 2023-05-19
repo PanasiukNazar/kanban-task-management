@@ -10,7 +10,7 @@
         </div>
 
         <div class="board__description">
-            <h4 class="title">Platform launch</h4>
+            <h4 class="title">{{ getCurrentBoardName }}</h4>
 
             <div class="task__adder">
                 <div class="button__wrapper">
@@ -30,6 +30,7 @@ import { computed } from 'vue';
 
 const store = useStore();
 
+const getCurrentBoardName = store.getters.getCurrentBoardName;
 const isSidebarHidden = computed(() => store.state.isSidebarHidden);
 </script>
 
@@ -39,7 +40,7 @@ const isSidebarHidden = computed(() => store.state.isSidebarHidden);
 .header__menu {
     display: flex;
     align-items: center;
-    position: absolute;
+    position: relative;
     width: 100%;
     background: $color_white;
     border-bottom: 1px solid #e4ebfa;
@@ -79,19 +80,8 @@ const isSidebarHidden = computed(() => store.state.isSidebarHidden);
             align-items: center;
 
             .button__wrapper {
-                background: $common_background;
-                border-radius: $universal_backdown;
+                @include common-button;
                 margin-right: $universal_backdown;
-
-                button {
-                    font-style: normal;
-                    color: $color_white;
-                    font-weight: $bold_text;
-                    font-family: $regular_family;
-                    font-size: $regular_font_size;
-                    line-height: $regular_line_height;
-                    padding: $small_padding $universal_backdown;
-                }
             }
 
             .board__editor {

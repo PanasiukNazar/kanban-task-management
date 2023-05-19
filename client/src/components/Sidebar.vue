@@ -8,22 +8,24 @@
             <div class="boards">
                 <div class="boards__counter">
                     <p class="boards__title">
-                        All boards ({{ boardsItems.length }})
+                        All boards ({{ boards.length }})
                     </p>
                 </div>
 
-                <div
+                <router-link
+                    :to="`/boards/${item.id}`"
                     class="list__item"
-                    v-for="item in boardsItems"
+                    :class="
+                        item.id === activeBoard?.id ? 'board--selected' : ''
+                    "
+                    v-for="item in boards"
                     :key="item.id"
-                    :class="item.isSelected ? 'item--selected' : ''"
-                    @click="selectBoard(item.id)"
                 >
                     <div class="icon">
                         <img src="@/assets/icon-board.svg" />
                     </div>
                     <p class="title">{{ item.title }}</p>
-                </div>
+                </router-link>
 
                 <div class="add-to__list">
                     <button>+ Create New Board</button>
@@ -74,16 +76,13 @@ import { computed } from 'vue';
 
 const store = useStore();
 
-const isSidebarHidden = computed(() => store.state.isSidebarHidden);
-const boardsItems = computed(() => store.state.boardItems);
+const boards = computed(() => store.state.boards);
+const activeBoard = computed(() => store.state.activeBoard);
 const currentTheme = computed(() => store.state.isDarkTheme);
+const isSidebarHidden = computed(() => store.state.isSidebarHidden);
 
 function toggleSidebar() {
     store.commit('toggleSidebar');
-}
-
-function selectBoard(id) {
-    store.commit('selectBoard', id);
 }
 
 function toggleTheme() {
@@ -96,6 +95,7 @@ function toggleTheme() {
 
 .sidebar {
     position: fixed;
+    top: 0;
     left: 0;
     display: flex;
     flex-direction: column;
@@ -105,6 +105,7 @@ function toggleTheme() {
     background: $color_white;
     border-right: 1px solid #e4ebfa;
     padding-right: $universal_backdown;
+    z-index: 1;
 
     @include base-transition;
 }
@@ -163,7 +164,7 @@ function toggleTheme() {
             line-height: $regular_line_height;
         }
     }
-    .item--selected {
+    .board--selected {
         background-color: #635fc7;
 
         .title {
