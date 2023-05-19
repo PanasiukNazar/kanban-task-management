@@ -7,9 +7,7 @@ export default {
         state.isSidebarHidden = !state.isSidebarHidden;
     },
 
-    selectBoard(state, id) {
-        state.boardItems.forEach((item) => {
-            item.isSelected = item.id === id;
-        });
+    setActiveBoard(state, id) {
+        state.activeBoard = state.localBoardsMap[id];
     },
 };
