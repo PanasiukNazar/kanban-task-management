@@ -2,6 +2,9 @@
     <div>
         <HeaderMenu />
         <Sidebar />
+        <div class="board-container">
+            <router-view></router-view>
+        </div>
     </div>
 </template>
 
@@ -22,6 +25,7 @@ import HeaderMenu from './components/HeaderMenu.vue';
 
 body {
     overflow: hidden;
+    height: 100vh;
 }
 
 nav {
