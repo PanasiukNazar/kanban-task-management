@@ -15,7 +15,7 @@ const store = createStore({
     actions,
     mutations,
     getters,
-    plugins: [vuexLocal.plugin],
+    // plugins: [vuexLocal.plugin],
 });
 
 export default store;
