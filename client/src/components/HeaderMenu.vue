@@ -10,7 +10,7 @@
         </div>
 
         <div class="board__description">
-            <h4 class="title">{{ getCurrentBoardName }}</h4>
+            <h4 class="title">{{ activeBoardTitle }}</h4>
 
             <div class="task__adder">
                 <div class="button__wrapper">
@@ -30,8 +30,8 @@ import { computed } from 'vue';
 
 const store = useStore();
 
-const getCurrentBoardName = store.getters.getCurrentBoardName;
 const isSidebarHidden = computed(() => store.state.isSidebarHidden);
+const activeBoardTitle = computed(() => store.state.activeBoard?.title);
 </script>
 
 <style lang="scss">
