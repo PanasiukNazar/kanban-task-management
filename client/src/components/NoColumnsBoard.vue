@@ -1,5 +1,8 @@
 <template>
-    <div class="no-column-board">
+    <div
+        class="no-column-board"
+        :class="!isSidebarHidden ? 'no-column-board--reduced' : ''"
+    >
         <div class="add-column">
             <p class="title">
                 This board is empty. Create a new column to get started.
@@ -11,9 +14,16 @@
     </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { useStore } from 'vuex';
+import { computed } from 'vue';
 
-<style lang="scss">
+const store = useStore();
+
+const isSidebarHidden = computed(() => store.state.isSidebarHidden);
+</script>
+
+<style lang="scss" scoped>
 @import '../styles/main.scss';
 
 .no-column-board {
@@ -24,6 +34,8 @@
         position: absolute;
         top: 50%;
         left: 50%;
+        margin-left: 0;
+        @include base-transition;
         transform: translate(-50%, -50%);
 
         .title {
@@ -40,6 +52,13 @@
         .button-wrapper {
             @include common-button;
         }
+    }
+}
+
+.no-column-board--reduced {
+    .add-column {
+        @include base-transition;
+        margin-left: 58px;
     }
 }
 </style>
