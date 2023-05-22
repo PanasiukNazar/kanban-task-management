@@ -61,9 +61,9 @@
         </div>
 
         <div
-            v-show="isSidebarHidden"
             @click="toggleSidebar"
             class="sidebar__opener"
+            :class="isSidebarHidden ? 'sidebar__opener--shown' : ''"
         >
             <img src="@/assets/icon-show-sidebar.svg" />
         </div>
@@ -112,15 +112,21 @@ function toggleTheme() {
 
 .sidebar__opener {
     background-color: #635fc7;
+    @include base-transition;
     border-radius: 0px 100px 100px 0px;
     position: fixed;
-    left: 0;
+    left: -65px;
     bottom: 32px;
     cursor: pointer;
 
     img {
         padding: $regular_padding;
     }
+}
+
+.sidebar__opener--shown {
+    @include base-transition;
+    left: 0;
 }
 
 .sidebar--hidden {
