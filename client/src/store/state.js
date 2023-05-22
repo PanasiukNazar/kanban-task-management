@@ -29,7 +29,7 @@ export default {
                     tasks: [
                         {
                             title: 'UI design',
-                            id: 1,
+                            id: 12,
 
                             subtasks: [
                                 {
@@ -51,7 +51,7 @@ export default {
                         },
                         {
                             title: 'UI design',
-                            id: 1,
+                            id: 13,
 
                             subtasks: [
                                 {
@@ -73,81 +73,7 @@ export default {
                         },
                         {
                             title: 'UI design',
-                            id: 1,
-
-                            subtasks: [
-                                {
-                                    title: 'first subtasks',
-                                    checked: true,
-                                    id: 1,
-                                },
-                                {
-                                    title: 'second subtasks',
-                                    checked: true,
-                                    id: 2,
-                                },
-                                {
-                                    title: 'third subtasks',
-                                    checked: true,
-                                    id: 3,
-                                },
-                            ],
-                        },
-                    ],
-                },
-                {
-                    title: 'todo',
-                    id: 1,
-                    color: '#ff0000',
-
-                    tasks: [
-                        {
-                            title: 'UI design',
-                            id: 1,
-
-                            subtasks: [
-                                {
-                                    title: 'first subtasks',
-                                    checked: true,
-                                    id: 1,
-                                },
-                                {
-                                    title: 'second subtasks',
-                                    checked: true,
-                                    id: 2,
-                                },
-                                {
-                                    title: 'third subtasks',
-                                    checked: true,
-                                    id: 3,
-                                },
-                            ],
-                        },
-                        {
-                            title: 'UI design',
-                            id: 1,
-
-                            subtasks: [
-                                {
-                                    title: 'first subtasks',
-                                    checked: true,
-                                    id: 1,
-                                },
-                                {
-                                    title: 'second subtasks',
-                                    checked: true,
-                                    id: 2,
-                                },
-                                {
-                                    title: 'third subtasks',
-                                    checked: true,
-                                    id: 3,
-                                },
-                            ],
-                        },
-                        {
-                            title: 'UI design',
-                            id: 1,
+                            id: 14,
 
                             subtasks: [
                                 {
@@ -177,7 +103,7 @@ export default {
                     tasks: [
                         {
                             title: 'UI design',
-                            id: 1,
+                            id: 15,
 
                             subtasks: [
                                 {
@@ -199,7 +125,7 @@ export default {
                         },
                         {
                             title: 'UI design',
-                            id: 1,
+                            id: 16,
 
                             subtasks: [
                                 {
@@ -221,7 +147,81 @@ export default {
                         },
                         {
                             title: 'UI design',
-                            id: 1,
+                            id: 17,
+
+                            subtasks: [
+                                {
+                                    title: 'first subtasks',
+                                    checked: true,
+                                    id: 1,
+                                },
+                                {
+                                    title: 'second subtasks',
+                                    checked: true,
+                                    id: 2,
+                                },
+                                {
+                                    title: 'third subtasks',
+                                    checked: true,
+                                    id: 3,
+                                },
+                            ],
+                        },
+                    ],
+                },
+                {
+                    title: 'todo',
+                    id: 1,
+                    color: '#ff0000',
+
+                    tasks: [
+                        {
+                            title: 'UI design',
+                            id: 18,
+
+                            subtasks: [
+                                {
+                                    title: 'first subtasks',
+                                    checked: true,
+                                    id: 1,
+                                },
+                                {
+                                    title: 'second subtasks',
+                                    checked: true,
+                                    id: 2,
+                                },
+                                {
+                                    title: 'third subtasks',
+                                    checked: true,
+                                    id: 3,
+                                },
+                            ],
+                        },
+                        {
+                            title: 'UI design',
+                            id: 19,
+
+                            subtasks: [
+                                {
+                                    title: 'first subtasks',
+                                    checked: true,
+                                    id: 1,
+                                },
+                                {
+                                    title: 'second subtasks',
+                                    checked: true,
+                                    id: 2,
+                                },
+                                {
+                                    title: 'third subtasks',
+                                    checked: true,
+                                    id: 3,
+                                },
+                            ],
+                        },
+                        {
+                            title: 'UI design',
+                            id: 10,
 
                             subtasks: [
                                 {

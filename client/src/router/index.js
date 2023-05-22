@@ -4,13 +4,6 @@ const routes = [
     {
         path: '/boards/:id',
         component: () => import('@/components/Board.vue'),
-
-        children: [
-            {
-                path: '/boards/:id/no-columns',
-                component: () => import('@/components/NoColumnsBoard.vue'),
-            },
-        ],
     },
 ];
 
