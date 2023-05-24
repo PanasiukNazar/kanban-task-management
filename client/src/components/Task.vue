@@ -1,16 +1,38 @@
 <template>
-    <div class="task">
+    <div class="task" @click="open()">
         <h4 class="task__title">{{ task.title }}</h4>
 
         <div class="subtasks">
-            <p>0 of 3 subtasks</p>
+            <p>{{ checkedSubtasks.length }} of {{ subtasksLength }} subtasks</p>
         </div>
     </div>
+    <ModalsContainer />
 </template>
 
 <script setup>
+import { ModalsContainer, useModal } from 'vue-final-modal';
+import TaskInfoModal from './TaskInfoModal.vue';
+import { computed } from 'vue';
+
 const props = defineProps({
-    task: Array,
+    task: Object,
+});
+
+const subtasksLength = computed(() => {
+    return props.task.subtasks.length;
+});
+
+const checkedSubtasks = computed(() => {
+    return props.task.subtasks.filter((item) => {
+        return item.checked;
+    });
+});
+
+const { open } = useModal({
+    component: TaskInfoModal,
+    attrs: {
+        task: props.task,
+    },
 });
 </script>
 
