@@ -39,13 +39,28 @@ export default {
                                 },
                                 {
                                     title: 'second subtasks',
-                                    checked: true,
+                                    checked: false,
                                     id: 2,
                                 },
                                 {
                                     title: 'third subtasks',
-                                    checked: true,
+                                    checked: false,
                                     id: 3,
+                                },
+                                {
+                                    title: 'first subtasks',
+                                    checked: true,
+                                    id: 4,
+                                },
+                                {
+                                    title: 'second subtasks',
+                                    checked: false,
+                                    id: 5,
+                                },
+                                {
+                                    title: 'third subtasks',
+                                    checked: false,
+                                    id: 6,
                                 },
                             ],
                         },
@@ -93,10 +108,91 @@ export default {
                                 },
                             ],
                         },
+                        {
+                            title: 'UI design',
+                            id: 13122,
+
+                            subtasks: [
+                                {
+                                    title: 'first subtasks',
+                                    checked: true,
+                                    id: 1,
+                                },
+                                {
+                                    title: 'second subtasks',
+                                    checked: false,
+                                    id: 2,
+                                },
+                                {
+                                    title: 'third subtasks',
+                                    checked: false,
+                                    id: 3,
+                                },
+                                {
+                                    title: 'first subtasks',
+                                    checked: true,
+                                    id: 4,
+                                },
+                                {
+                                    title: 'second subtasks',
+                                    checked: false,
+                                    id: 5,
+                                },
+                                {
+                                    title: 'third subtasks',
+                                    checked: false,
+                                    id: 6,
+                                },
+                            ],
+                        },
+                        {
+                            title: 'UI design',
+                            id: 13133,
+
+                            subtasks: [
+                                {
+                                    title: 'first subtasks',
+                                    checked: true,
+                                    id: 1,
+                                },
+                                {
+                                    title: 'second subtasks',
+                                    checked: true,
+                                    id: 2,
+                                },
+                                {
+                                    title: 'third subtasks',
+                                    checked: true,
+                                    id: 3,
+                                },
+                            ],
+                        },
+                        {
+                            title: 'UI design',
+                            id: 11231234,
+
+                            subtasks: [
+                                {
+                                    title: 'first subtasks',
+                                    checked: true,
+                                    id: 1,
+                                },
+                                {
+                                    title: 'second subtasks',
+                                    checked: true,
+                                    id: 2,
+                                },
+                                {
+                                    title: 'third subtasks',
+                                    checked: true,
+                                    id: 3,
+                                },
+                            ],
+                        },
                     ],
                 },
                 {
-                    title: 'todo',
+                    title: 'do',
                     id: 1,
                     color: '#ff0000',
 
@@ -170,7 +266,7 @@ export default {
                     ],
                 },
                 {
-                    title: 'todo',
+                    title: 'done',
                     id: 1,
                     color: '#ff0000',
 

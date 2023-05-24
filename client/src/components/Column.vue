@@ -14,7 +14,7 @@
 import Task from './Task.vue';
 
 const props = defineProps({
-    column: Array,
+    column: Object,
 });
 </script>
 
