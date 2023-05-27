@@ -43,19 +43,14 @@
 
         <div class="task-status">
             <div class="title">Current Status</div>
-            <select class="status__items">
-                <option v-for="column in boardColumns">
-                    {{ column.title }}
-                </option>
-            </select>
         </div>
     </VueFinalModal>
 </template>
 
 <script setup>
 import { useStore } from 'vuex';
-import { VueFinalModal } from 'vue-final-modal';
 import { computed } from 'vue';
+import { VueFinalModal } from 'vue-final-modal';
 
 const store = useStore();
 
